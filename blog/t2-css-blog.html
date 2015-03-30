@@ -1,0 +1,9 @@
+Positioning in CSS.
+
+
+
+First, you have relative positioning. Relative positions the element where it would be normally, and then moves it around based on that position. <code>position:relative; left:10px;</code> would position your element 10 pixals to the right of where it would normally show up. Wait, what? Modifying <code>left</code> moves your div to the right? Basically, what <code>left:10px;</code> is saying is to add 10 pixals to the left edge's position of your div, which ends up moving it right. Similarly, <code>top:10px</code> is going to shift your div 10 pixals down.
+
+Absolute positioning tells your css exactly where to put your element in relation to its closest parent that is also absolutely (or relativly) positioned. If there isn't one it will position itself in relation to the page itself. Basically what this means is that you use top, bottom, left and right to choose exactly where the element goes, and how much space it takes up. If the element is inside another one you choose where it goes inside that element; for example, if you absolutely position a navigation bar, and its buttons you'd pick exactly where on the page to put the bar, and then exactly where inside the bar to put its buttons. The buttons would be positioned relative to the nav bar's position.
+
+Finally, you can use fixed positioning, which positions things relative to the browser window. This is similar to absolute positioning since you choose exactly where the element goes, but instead of putting it relative to the page itself you put it relative to the browser window. What that means is that the element sticks in the same place no matter how much you scroll the window vertically or horizontally.

@@ -1,15 +1,36 @@
-main {
-    display: inline-block;
+.bloglink{
+	text-decoration: none;
+	display: block;
+	color: #212121;
 }
 
-main > h1 {
-    margin: 0;
+.bloglink:hover{
+
+	color: #727272;
 }
 
-main > h3 {
-    margin: 0em;
+.left_sidebar{
+	display:inline-block;
+	vertical-align:top;
+	width:300px;
 }
 
-main > h5 {
-    margin: 0em;
+.blogpost{
+	display:inline-block;
+	width: 800px;
+}
+
+.blog_title{
+	font-size:2em;
+	margin-top:10px
+}
+
+
+.blog_subtitle{
+	margin-top:-35px;
+
+}
+
+.blog_date{
+	margin-top: -20px;
 }
