@@ -1,0 +1,15 @@
+main {
+    display: inline-block;
+}
+
+main > h1 {
+    margin: 0;
+}
+
+main > h3 {
+    margin: 0em;
+}
+
+main > h5 {
+    margin: 0em;
+}
