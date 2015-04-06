@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title><!--Blog Title-->
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css" />
+<style type="text/css"></style></head>
+<body>
+    <header class="header">
+      <h1>Ben Wootten</h1>
+    </header>
+    <nav class="navbar">
+      <a href="./blog-index.html" class="navlink">Blog</a>
+      <a href="#" class="navlink">About me</a>
+      <a href="#" class="navlink">Contact</a>
+    </nav>
+    <section class="pagecontent">
+      <nav class="left_sidebar">
+        <ul>
+        <li>
+        <a href="./t2-css-blog.html" class="bloglink">Positioning in CSS</a>
+            </li>
+        <li>
+        <a href="./c1-chefs-kitchen.html" class="bloglink">Chef's Kitchen</a>
+        </li>
+        <li>
+        <a href="./t1-git-blog.html" class="bloglink">Git, Github and Version Control</a>
+        </li>
+        </ul>
+      </nav>
+      <section class="blogpost">
+        <h1 class="blog_title">Arrays and Hashes</h1><!--Blog Title-->
+        <!--<h3 class="blog_subtitle">Subtitle</h3>Subtitle-->
+        <h5 class="blog_date">April 5, 2015</h5><!--Blog Date-->
+        <p>In ruby arrays and hashes are both data structures that let store and access multiple pieces of data. When you assign variables you normally are only able to assign a variable to one thing, so <code>first_name = “Ben”</code> means that the variable first_name now points to “Ben”. If we wanted to make a list of a bunch of first names of people we would have to make separate variables for each one <code>name1 = “Ben”, name2 = “Will”, name3 = “Alice”</code> and so on. This isn't a great solution though, what if we have 500 names, and 500 variables? It would take forever to find which variable points to who, wouldn't it be nice if we could group all our name variables to make life easier? That's where arrays and hashes come in.</p>
+        <p>Arrays are basically an ordered list of things. <code> name_array = [“Ben”, “Will”, “Alice”]</code> makes a single variable, name_array, that contains all three names. I imagine it as a long conveyor belt with a bunch of boxes in a line. In the case of name_array the zeroth (because counting starts at zero for computers) box contains the string “Ben”, the first box contains “Will” and the second, and last, box contains “Alice”. </p>
+        <p>Right now it doesn't look like arrays have helped much over just having separate variables for every name, we've just substituted name_array[0] for name1, array_name[1] for name2 and so on. However, imagine our name_array has 500 entries, if we wanted to print them all out at once we would only have to type <code>puts name_array,</code> and our computer would print all 500 of them in order. With separate variables we would have to type 500 puts statements, taking quite a bit longer. Ruby also includes a lot of methods specifically for arrays, for instance say we want to search our array and see if it includes a specific name, we would just need to type <code>name_array.include?(“name”)</code> and we would get a true or false depending on if “name” was in our array.</p>
+        <p>One downside of arrays is that the labels are always numbers, and they are always positive integers (and 0). That's where hashes come in, they're similar to arrays in that they can contain multiple pieces of data but unlike arrays they don't have an order, and you get to label each thing you put into your hash. Say we create the hash <code>friends={ best => “Ben” , ok => “Will” , good => “Alice”}</code> we've labeled three boxes “best”, “ok” and “good” and put the strings “Ben”, “Will”, and “Alice” in them. These boxes aren't in a specific order, there isn't a zeroth, or last box like with arrays but instead we got to name them however we wanted so we could be more descriptive with our labels.</p>
+        <p>Arrays and hashes are pretty similar, but hopefully this post has clarified their main differences. Arrays are numbered, and keep the order things were put into them so they're great for things where that order matters. Hashes are unordered, but have a wider range of labels so they're better for storing things in relation to other things, for example a hash that takes someone's name and give you their address.</p>
+      </section>
+    </section>
+    <footer class="footer"></footer>
+  </body>
+</html>
