@@ -29,11 +29,21 @@
         </ul> -->
       </nav>
       <section class="blogpost">
-        <h1 class="blog_title">Title</h1><!--Blog Title-->
-        <h3 class="blog_subtitle">Subtitle</h3><!--Subtitle-->
-        <h5 class="blog_date">May, 1000, 65AD</h5><!--Blog Date-->
-        <p></p>
-        <p></p>
+        <h1 class="blog_title">#Map</h1><!--Blog Title-->
+        <!-- <h3 class="blog_subtitle">Subtitle</h3><!Subtitle--> 
+        <h5 class="blog_date">April 12, 2015</h5><!--Blog Date-->
+        <p>Enumerable#Map is one of the most useful enumerable methods ruby has. It's similar to Array#Each in that it it takes a group of data, such as an array, and executes a piece of code for each element in that group. However, the main difference between #Map and #Each is that A.each{stuff} does stuff and then returns A but A.map{stuff} does stuff and returns the return values of {stuff}.</p>
+        <p>This means that we can use #Map to modify our input much easier than if we used #Each. For example, say we have an array of numbers <code>A=[0,1,2,3]</code> and we wanted to make another array that contained the squares of those numbers. Using #Map this is pretty easy, we just do <code>squares = A.map{|x| x*x}</code> . Using #Each requires more creative code; since A.each will just return [0,1,2,3] we have to do something like <code> squares =[] \n A.each{|x| squares << x*x}</code> which requires us to create the squares array beforehand.</p>
+        
+        <p>#Map also has a destructible version, #Map!, which is the same as #Map except it modifies the original group of data. This makes it easy to create destructible methods that make changes based on your data. For example, lets say we wanted to make a method, square_array, that when called on an array would square all the values. It would look something like this:</p>
+
+        <p><code>
+def square_array(array)
+array.map!{|x| x*x}
+end
+</code></p>
+
+        <p>Now if we call it on our A array from before <code>square_array(A)</code> it would take each entry in A and square it, so now <code> A => [0,1,4,9]</code>. This makes #Map, and #Map! very powerful tools for manipulating large amounts of data quickly.</p>
       </section>
     </section>
     <footer class="footer"></footer>
