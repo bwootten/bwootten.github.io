@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title><!--Blog Title-->
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css" />
+<style type="text/css"></style></head>
+<body>
+    <header class="header">
+      <h1>Ben Wootten</h1>
+    </header>
+    <nav class="navbar">
+      <a href="./blog-index.html" class="navlink">Blog</a>
+      <a href="#" class="navlink">About me</a>
+      <a href="#" class="navlink">Contact</a>
+    </nav>
+    <section class="pagecontent">
+      <nav class="left_sidebar">
+        <!-- <ul>
+        <li>
+        <a href="./t2-css-blog.html" class="bloglink">Positioning in CSS</a>
+            </li>
+        <li>
+        <a href="./c1-chefs-kitchen.html" class="bloglink">Chef's Kitchen</a>
+        </li>
+        <li>
+        <a href="./t1-git-blog.html" class="bloglink">Git, Github and Version Control</a>
+        </li>
+        </ul> -->
+      </nav>
+      <section class="blogpost">
+        <h1 class="blog_title">Classes in Ruby</h1><!--Blog Title-->
+        <!-- <h3 class="blog_subtitle">Subtitle</h3>Subtitle -->
+        <h5 class="blog_date">April 19, 2015</h5><!--Blog Date-->
+        <p>Classes are very important in the Ruby language. Most things in Ruby are objects, that is pretty much everything is a collection of variables and a collection of methods that affect those variables. These can be pretty simple, as in the case of an Integer which has one variable (the number itself) and some methods (like #to_s, or even the addition operator, +) or they can more complicated like Arrays and Hashes. Every object has a class, which basically tells the computer what type of object it is, and what variables and methods to expect for the object. Fixnum, Integer, Array and Hash are all classes built into Ruby but you're not just limited to the default classes, you can define your own.</p>
+        <p>Let's say we wanted to make a class to simulate a deck of cards. Our variables would be the things that make our deck of cards a deck of cards while our methods would be the things that we want to do with out deck. A standard deck of cards has 52 cards, so we probably want to use an array to hold them. That's all we really <i>need</i> but maybe we want to be fancy, so we'll make a couple variables that tell our deck of cards what color, and what design the back of our cards look like.</p>
+        <p>As for the methods, we're going to want to be able to shuffle our deck and at the very least be able to draw the top card of our deck. There is a lot more we could do with our deck of cards, play solitaire for example, but I'm going to keep it simple and just stick to the above two methods.</p>
+        <p>Now that we know what we want in our class it would come out looking something like this:</p>
+        <code>
+def deck_of_cards
+  attr_reader :back_color :back_design
+  
+  def initialize(color, design)
+    @back_color = color
+    @back_design = design
+    @deck = Array.new(52) {|x| x+1}
+  end
+
+  def shuffle
+    @deck.shuffle!
+  end
+
+  def draw_card
+    deck.rotate!  #This simply puts the top card on the bottom of the deck, its here 
+                         #so calling draw_card twice in a row doesn't draw the same card twice
+    return @deck[0]
+  end
+end
+</code>
+<p>I've made @back_color and @back_design attr_reader variables which allows people to see the color or design of the cardback just by calling the associated methods but not @deck. This is because the color of design of our deck is something we might want the user, or other programs to see. Maybe we want to be able to display our deck to the screen, we'd need to be able to know what the backs look like to do that. @deck we don't want people to be able to see though, otherwise you could figure out the order of the deck, which is something we don't want.</p>
+
+      </section>
+    </section>
+    <footer class="footer"></footer>
+  </body>
+</html>
