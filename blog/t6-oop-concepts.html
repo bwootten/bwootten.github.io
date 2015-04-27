@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title><!--Blog Title-->
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css" />
+<style type="text/css"></style></head>
+<body>
+    <header class="header">
+      <h1>Ben Wootten</h1>
+    </header>
+    <nav class="navbar">
+      <a href="./blog-index.html" class="navlink">Blog</a>
+      <a href="#" class="navlink">About me</a>
+      <a href="#" class="navlink">Contact</a>
+    </nav>
+    <section class="pagecontent">
+      <nav class="left_sidebar">
+        <!-- <ul>
+        <li>
+        <a href="./t2-css-blog.html" class="bloglink">Positioning in CSS</a>
+            </li>
+        <li>
+        <a href="./c1-chefs-kitchen.html" class="bloglink">Chef's Kitchen</a>
+        </li>
+        <li>
+        <a href="./t1-git-blog.html" class="bloglink">Git, Github and Version Control</a>
+        </li>
+        </ul> -->
+      </nav>
+      <section class="blogpost">
+        <h1 class="blog_title">Ruby Modules</h1><!--Blog Title-->
+        <!-- <h3 class="blog_subtitle"></h3><-Subtitle-->
+        <h5 class="blog_date">April, 26 2015</h5><!--Blog Date-->
+        <p>By now we're pretty familiar with ruby classes, but I am still pretty unfamiliar with modules. Classes define the state and behavior of objects, which means that the definition of a class will have variables and methods. Modules are similar, except they contain constants and methods and you can't initialize an object based on the module like how you can with classes. This sounds a bit limiting, why would you define a module when you could define a class instead?</p>
+        <p>The first reason is that modules are useful for preserving namespace. Imagine Bob creates a class that does awesome things, so he names it Awesome. Later on he and Alice are working together and they want to use Bob's Awesome class in their code, but they find out that they are also using an Awesome class that Alice made. Normally their names would conflict and one of them would need to be renamed, however, if you wrap both Awesome classes in modules you can preserve their original names.</p>
+        <code>module Bob <br/>
+  ..class Awesome <br/>
+    ....#Awesome stuff<br/>
+    ..end<br/>
+    end</code>
+<p>When you want to define a new Awesome object you would just have to call it like <code> object = Bob::Awesome.new</code>. Of course, you could use a Bob class as a wrapper instead of a Bob module, but modules can't be initialized as objects. In this case that's a good thing, since Bob has no state or behavior of its own if we were allowed to create a Bob object it might cause problems until we realized that Bob isn't supposed to be initialized. Using a module wrapper nips this in the bud since ruby will tell us that we can't make a Bob object as soon as we try to.</p>
+<p>Another use for modules is that they let you define a group of methods that are independent of a class that you can then mix into any number of classes. This is called a mixin and ruby treats the mixed in module as basically a superclass of the class they are mixed into. This is a really easy way to define a library of functions you want to be accessible from multiple classes without having to repeat yourself inside each class. For a more indepth look at the I would suggest reading <a href=”http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html”>this article</a> on modules.</p>
+      </section>
+    </section>
+    <!-- <footer class="footer"></footer> -->
+  </body>
+</html>
