@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title><!--Blog Title-->
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css" />
+<style type="text/css"></style></head>
+<body>
+    <header class="header">
+      <h1>Ben Wootten</h1>
+    </header>
+    <nav class="navbar">
+      <a href="./blog-index.html" class="navlink">Blog</a>
+      <a href="#" class="navlink">About me</a>
+      <a href="#" class="navlink">Contact</a>
+    </nav>
+    <section class="pagecontent">
+      <nav class="left_sidebar">
+        <!-- <ul>
+        <li>
+        <a href="./t2-css-blog.html" class="bloglink">Positioning in CSS</a>
+            </li>
+        <li>
+        <a href="./c1-chefs-kitchen.html" class="bloglink">Chef's Kitchen</a>
+        </li>
+        <li>
+        <a href="./t1-git-blog.html" class="bloglink">Git, Github and Version Control</a>
+        </li>
+        </ul> -->
+      </nav>
+      <section class="blogpost">
+        <h1 class="blog_title">Ruby Classes vs JavaScript Constructors</h1><!--Blog Title-->
+        <!-- <h3 class="blog_subtitle">Subtitle</h3>Subtitle -->
+        <h5 class="blog_date">May, 3 2015</h5><!--Blog Date-->
+        <p>One of the more subtle differences between Ruby and JavaScript is the differences between how they both implement objects. In Ruby we've gotten used to using classes to create blueprints for objects and give those objects variables and methods.  JavaScript has constructors and prototypes to fill a similar role, that of automating the construction of objects, but the way JavaScript implements them is pretty different from how Ruby implements its classes.</p>
+        <p>In Ruby, everything is an object, even classes; as you might expect ruby gives them the type of class.  If you goto the ruby docs for <a href=”http://ruby-doc.org/core-2.2.0/Class.html”>class</a> you can see that it has a small number of methods, and a parent class, module, which has a lot of methods that classes inherit. Some of these, like the attr_accessor methods, we've been using a lot, but there are a lot that you probably haven't seen before. These methods provide a framework to manipulate your class definitions like they were objects, because remember, they are objects. For instance, the #instance_methods method will return all the methods contained by the receiver. This also extends to any objects created by the <code>class.new</code> method since the parent class of those objects would be class.</p>
+        <p>JavaScript, on the other hand, doesn't provide a framework around its constructors. This means that when you create a new object using a constructor it will only have the values and methods that you put into the constructor, unlike Ruby they don't have a “constructor” class to inherit from. This also means that you don't have a method to return all the methods of your object, you would have to iterate through the object's properties and look for the ones that have a function as their value. This ultimately means that JavaScript doesn't encapsulate things like Ruby does. Ruby builds a shell around objects and lets you use getter and setter functions to interact with them while JavaScript exposes methods and properties to be used directly. </p>
+      </section>
+    </section>
+    <!-- <footer class="footer"></footer> -->
+  </body>
+</html>
