@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title><!--Blog Title-->
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css" />
+<style type="text/css"></style></head>
+<body>
+    <header class="header">
+      <h1>Ben Wootten</h1>
+    </header>
+    <nav class="navbar">
+      <a href="./blog-index.html" class="navlink">Blog</a>
+      <a href="#" class="navlink">About me</a>
+      <a href="#" class="navlink">Contact</a>
+    </nav>
+    <section class="pagecontent">
+      <nav class="left_sidebar">
+        <!-- <ul>
+        <li>
+        <a href="./t2-css-blog.html" class="bloglink">Positioning in CSS</a>
+            </li>
+        <li>
+        <a href="./c1-chefs-kitchen.html" class="bloglink">Chef's Kitchen</a>
+        </li>
+        <li>
+        <a href="./t1-git-blog.html" class="bloglink">Git, Github and Version Control</a>
+        </li>
+        </ul> -->
+      </nav>
+      <section class="blogpost">
+        <h1 class="blog_title">Big O Notation</h1><!--Blog Title-->
+        <!-- <h3 class="blog_subtitle">Subtitle</h3>Subtitle -->
+        <h5 class="blog_date">May, 10, 2915</h5><!--Blog Date-->
+
+<p>Big O notation is used to describe how a chunk of code, or algorithm scales with the growth of its inputs. Usually it's talking about how long the code takes to execute, but you can also use it to talk about how the memory usage scales with input. For instance, if you said your function was O(n) that means that it scales linearly with input. For example:</p>
+
+<code><pre>
+def function1(array)
+  array.each do |element|
+    puts element
+  end
+end</pre></code>
+
+<p>Function1 is O(n) because its doing something for every element in the input array. If you double the size of the array, you double how many puts statements the function is doing, so you double the amount of time it takes to execute.</p>
+
+<code><pre>
+def function2(array)
+  array.each do |x|
+    array.each do |y|
+      puts x + y
+    end
+  end
+end</code></pre>
+
+<p>Function2 is O(n<sup>2</sup>) because we have a nested loop. Say we have n elements in the input array, for each element the function is calling puts n times. n elements each doing n things, so overall there are n<sup>2</sup> calls to puts.</p>
+
+<p>When you use O notation its assumed that you're dealing with very large inputs, which means you can knock off the lower order terms. For instance, if you had a function that called both function1 and function2 above one after the other it would scale like n+n^2. At very large inputs the n term isn't going to contribute very much to the overall time for our composite function to run when compared to the n^2 term, so we would just say that its O(n^2).</p>
+
+<p>Earlier I said you could use O notation to describe how the memory usage of code scales with input as well as speed.</p>
+
+<code><pre>
+def function3(array)
+  my_array = array.dup
+end</pre></code>
+
+<p>function3 doesn't really do anything, it just creates a local array variable and makes it a duplicate of the input. my_array takes up O(n) memory, just for a second. The bigger array, the bigger my_array has to be.</p>
+
+<p>Keeping track of how code is going to scale with input is pretty important when refactoring your code if its going to come into contact with large inputs. Refactoring a function or class into something more readable but O(n<sup>2</sup>) when it was O(n) before is going to have a large impact on the performance of your code. At the same time it can inform you where your speed bottlenecks are, and where you should be trying to optimize if your code isn't scaling the way you want it too.</p>
+
+
+      </section>
+    </section>
+    <!-- <footer class="footer"></footer> -->
+  </body>
+</html>
